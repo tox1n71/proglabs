@@ -1,0 +1,53 @@
+import static java.lang.Math.*;
+
+public class Firstlaba {
+    public static double RandomInRange() {
+        double f = -7.0, l = 6.0, r;
+        r = f + (double) (Math.random() * ((l - f) + 1));
+        return r;
+
+    }
+    public static void main(String[] args) {
+        // тут тоже новый метод
+        long[] b = new long[17];
+        long c = 2;
+        for (int i = 0; i < b.length; i++) {
+            b[i] = c;
+            c++;
+        }
+        double[] x = new double[12];
+        for (int i = 0; i < x.length; i ++){
+            x[i] = RandomInRange();
+        }
+
+        double[][] d = new double[17][12];
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < x.length; j++) {
+                double x1 = x[j];
+                if (b[i] == 8)
+                    d[i][j] = cbrt(atan((x1 - 0.5) / 13));
+                else if (b[i] == 2 || b[i] == 3 || b[i] == 5 || b[i] == 7 || b[i] == 12 || b[i] == 13 || b[i] == 14 || b[i] == 16) {
+                    d[i][j] = pow(log(pow(tan(x1), 2)), pow(pow(x1 / 2, 3), 2 / cbrt(x1)) / 4);
+                } else {
+                    d[i][j] = pow((3 / 4) / (asin(0.5 * 0.25 * ((x1 - 0.5) / 13))), 3);
+                }
+
+            }
+
+        }
+        Results(d);
+
+    }
+
+    public static void Results(double[][] d) {
+        float f1;
+        for (int i = 0; i < d.length; i++) {
+            for (int j = 0; j < d[i].length; j++) {
+                f1 = (float) d[i][j];
+                System.out.printf("%.2f ", f1);
+            }
+            System.out.println();
+
+        }
+    }
+}
