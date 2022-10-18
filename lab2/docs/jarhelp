@@ -1,0 +1,10 @@
+cd proglab/lab2
+mkdir build
+javac -d build -cp "src:lib/Pokemon.jar" src/SeconLab.java
+cp -R lib/ build/
+cd build
+echo "Main-Class: SecondLab
+Class-Path: Pokemon.jar
+" > MANIFEST.MF
+jar cfm JarName.jar MANIFEST.MF SecondLab.class mymoves mypokemons
+java -jar JarName.jar
