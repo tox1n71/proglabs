@@ -1,0 +1,6 @@
+javac -d build -cp "src" src/ru/itmo/lab3/Main.java 
+cd build
+echo "Main-Class: ru.itmo.lab3.Main
+> " > MANIFEST.MF
+jar cfm Lab3.jar MANIFEST.MF ru/itmo/lab3/*
+java -jar Lab3.jar 
