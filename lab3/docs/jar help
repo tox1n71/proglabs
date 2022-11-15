@@ -1,6 +1,10 @@
-javac -d build -cp "src" src/ru/itmo/lab3/Main.java 
-cd build
-echo "Main-Class: ru.itmo.lab3.Main
-> " > MANIFEST.MF
-jar cfm Lab3.jar MANIFEST.MF ru/itmo/lab3/*
+cd proglab // переходим в папку с лабами
+mkdir lab3 // создаем папку для 3 лабы
+cd lab3 // заходим в нее
+mkdir build // создаем папку, в которую будем компилить классы
+javac -d build -cp "src" src/ru/itmo/lab3/Main.java // -d указывает директорию куда классы компилить, -cp путь к классам
+cd build // переходим в папку билд
+echo "Main-Class: ru.itmo.lab3.Main // создаем манифест, соответсвенно ваши пакеты и ваше название главного класса
+> " > MANIFEST.MF 
+jar cfm Lab3.jar MANIFEST.MF ru/itmo/lab3/*  // дальше дефолт компиляция самого джарника
 java -jar Lab3.jar 
